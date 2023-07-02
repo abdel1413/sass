@@ -1,0 +1,47 @@
+//import the partial file called _nested.scss
+//note that we imported nested file without leading
+//underScore(_)
+// Leading underscore (_) is a way to tell sass the this
+//browser that this file is a part of file so do not run it
+//until I import it
+@import "./nested";
+@import "./variables";
+
+//ordinal style with variables
+h1 {
+  background-color: rgb(83, 79, 79);
+  font-family: $main-fonts;
+  color: $heading-color;
+  text-align: center;
+}
+
+body {
+  background: $bdybg;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.awesome {
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  @include border-radius(15px);
+}
+
+//using mixin and if statement to change border size;
+@mixin border-stroke($val) {
+  @if ($val == light) {
+    border: 1px solid red;
+  } @else if($val == medium) {
+    border: 3px solid red;
+  } @else if($val == heavy) {
+    border: 6px solid red;
+  } @else {
+    border: none;
+  }
+}

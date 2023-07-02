@@ -1,0 +1,28 @@
+.blog-post h2 {
+  text-align: center;
+  color: blue;
+}
+
+.blog-post p {
+  font-size: 25px;
+  color: green;
+}
+
+h1 {
+  background-color: #534f4f;
+  font-family: Arial, sans-serif;
+  color: blue;
+  text-align: center;
+}
+
+body {
+  background: #00eaff;
+}
+
+.awesome {
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=styles.css.map */

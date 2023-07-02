@@ -1,0 +1,13 @@
+// using nested styling
+//Notice
+@import "./variables";
+.blog-post {
+  h2 {
+    text-align: center;
+    color: $heading-color;
+  }
+  p {
+    font-size: $ft-size;
+    color: $PColor;
+  }
+}
