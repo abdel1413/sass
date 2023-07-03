@@ -1,0 +1,21 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+
+.blue-bg {
+  background-color: blue;
+}
+
+.green-bg {
+  background-color: green;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+.gray-bg {
+  background-color: gray;
+}
+/*# sourceMappingURL=eachStyles.css.map */

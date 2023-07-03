@@ -11,3 +11,25 @@
     color: $PColor;
   }
 }
+
+// using start through end (inclusive)
+// Note: #{$i} is a syntax  to combine a  variable
+// with a text to make it a string representing
+// class value
+@for $i from 1 through 6 {
+  .text-#{$i} {
+    font-size: 15px * $i;
+  }
+}
+
+// using start to end  (exlusive)
+@for $j from 1 to 6 {
+  .l#{$j} {
+    font-size: 10px * $j;
+    font-family: "Times New Roman", Times, serif;
+    list-style: none;
+    text-decoration: underline;
+    width: 60px * $j;
+    background-color: sandybrown;
+  }
+}

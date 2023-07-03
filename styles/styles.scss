@@ -19,6 +19,8 @@ body {
   background: $bdybg;
 }
 
+// use mixin to group  css declarations
+// that we want to reuse throughout
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -26,22 +28,89 @@ body {
   border-radius: $radius;
 }
 
+//using mixin and if statement to change border size;
+@mixin border-stroke($val) {
+  @if $val == light {
+    border: 1px solid red;
+  } @else if $val == medium {
+    border: 3px solid red;
+  } @else if $val == heavy {
+    border: 6px solid red;
+  } @else {
+    border: none;
+  }
+}
+
 .awesome {
   height: 200px;
   width: 200px;
   background-color: gray;
   @include border-radius(15px);
+  @include border-stroke(medium);
 }
 
-//using mixin and if statement to change border size;
-@mixin border-stroke($val) {
-  @if ($val == light) {
-    border: 1px solid red;
-  } @else if($val == medium) {
-    border: 3px solid red;
-  } @else if($val == heavy) {
-    border: 6px solid red;
-  } @else {
-    border: none;
+//end
+//@each directive  loop
+
+.each-loop {
+  width: 200px;
+  height: 150px;
+}
+
+@each $color in red, blue, gray, green {
+  .#{$color}-bg {
+    background: $color;
+  }
+}
+
+//@each directive map
+//Note: here we need to use $key to reference the key in the map
+//create a variable
+$colors: (
+  color1: blue,
+  color2: green,
+  color3: yellow,
+  color4: red,
+);
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: $color;
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+//using @while to loop over the div
+$x: 1;
+@while $x < 7 {
+  .text-#{$x} {
+    background-color: gray;
+    font-size: 15px * $x;
+  }
+  $x: $x + 1;
+}
+
+//end
+
+.box {
+  @extend .each-loop;
+  // background-color: blue;
+}
+
+@each $color in blue, red, green, gray, yellow {
+  .#{$color}-box {
+    background-color: $color;
+  }
+  $d: 1;
+  @while $d < 6 {
+    .box-#{$d} {
+      width: 10px * $d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    $d: $d + 1;
   }
 }

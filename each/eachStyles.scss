@@ -1,0 +1,27 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+
+//@each directive loop
+//using @each $var in ...{}
+@each $color in blue green red gray {
+  .#{$color}-bg {
+    background-color: $color;
+  }
+}
+
+//@each directive map
+//Note: we need the $key variable to reference the key in the map
+
+// $colors: (
+//   color1: blue,
+//   color2: green,
+//   color3: gray,
+//   color4: red,
+// );
+// @each $key, $color in colors {
+//   .#{$color}-bg {
+//     background-color: $color;
+//   }
+// }
