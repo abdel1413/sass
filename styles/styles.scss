@@ -1,9 +1,7 @@
 //import the partial file called _nested.scss
 //note that we imported nested file without leading
 //underScore(_)
-// Leading underscore (_) is a way to tell sass the this
-//browser that this file is a part of file so do not run it
-//until I import it
+
 @import "./nested";
 @import "./variables";
 
@@ -65,6 +63,7 @@ body {
 
 //@each directive map
 //Note: here we need to use $key to reference the key in the map
+
 //create a variable
 $colors: (
   color1: blue,

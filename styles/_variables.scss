@@ -1,4 +1,7 @@
 //creating variable for ruseable
+// Leading underscore (_) is a way to tell sass the
+//browser that this file is a part of file so it
+//should not be generated until it is imported
 $main-fonts: Arial, sans-serif;
 $heading-color: blue;
 $bdybg: hsl(185, 100%, 50%);
